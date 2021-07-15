@@ -1,27 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Staatliches&family=Zen+Tokyo+Zoo&display=swap');
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
 
-body {
-    background-color: var(--color1);
-    min-height: 100vh;
-    font-family: 'Zen Tokyo Zoo', cursive;
-}
-
-:root{
-    --color1: #000;
-    --color2: white;
-    --color3: #2C2E43;
-    --color4: #171717;
-    --pink: #FF00CC;
-    --lime: lime;
-    --yellow: #FFCC33;
-
-}
 
 h1, h3{
     color: var(--color2);
@@ -78,7 +55,7 @@ main {
     background-color: var(--color4);
     border-radius: 6px;
     transition: 0.5s;
-    height: 32vh;
+    height: 33vh;
     display: flex;
     align-items: center;
     
@@ -97,13 +74,14 @@ main {
 
 
 img {
-    height: 30vh;
+    height: 28vh;
     max-width: 50vw;
     width: 20vw;
 }
 
 span{
     background-color: var(--color3);
+    padding-left: 3px;
 }
 
 
@@ -172,16 +150,16 @@ a {
 
 a:hover{
     transition: 0.8s;
-    color: #fff;
+    color: var(--color2);
     text-shadow:
-      0 0 7px #fff,
-      0 0 10px #fff,
-      0 0 21px #fff,
-      0 0 42px #0fa,
-      0 0 82px #0fa,
-      0 0 92px #0fa,
-      0 0 102px #0fa,
-      0 0 151px #0fa;
+      0 0 7px var(--color2),
+      0 0 10px var(--color2),
+      0 0 21px var(--color2),
+      0 0 42px var(--lime),
+      0 0 82px var(--lime),
+      0 0 92px var(--lime),
+      0 0 102px var(--lime),
+      0 0 151px var(--lime);
 
 }
 

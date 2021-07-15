@@ -1,0 +1,27 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Tokyo+Zoo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&family=Zen+Tokyo+Zoo&display=swap');
+
+:root{
+    --color1: #000;
+--color2: white;
+--color3: #2C2E43;
+--color4: #171717;
+--pink: #FF00CC;
+--lime: lime;
+--yellow: #FFCC33;
+
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color1);
+    min-height: 100vh;
+    font-family: 'Zen Tokyo Zoo', cursive;
+}
