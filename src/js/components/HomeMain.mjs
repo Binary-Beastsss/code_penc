@@ -26,7 +26,7 @@ const Container = new Element({
 const Sidebar = `
 <div class="sidebar">
     <div class="pen"><i class="fas fa-pencil-ruler"></i></div>
-    <a href="https://github.com/orgs/Binary-Beastsss/dashboard" target="_blank">Lorem</a><br/>
+    <a href="https://github.com/orgs/Binary-Beastsss/dashboard" target="_blank">Github</a><br/>
     <hr/>
     <a href="/app" data-link>Editor</a>
     <hr/>
@@ -38,8 +38,8 @@ const Footer = `
 <div class="footer">
     <div class="u">
         <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Support</a></li>
+            <li><a href="https://github.com/orgs/Binary-Beastsss/dashboard" target="_blank"">About</a></li>
+            <li><a href="https://github.com/orgs/Binary-Beastsss/dashboard" target="_blank"">Support</a></li>
         </ul>
     </div>
     <div class="c"><h1>CODE <i class="fas fa-pencil-alt"></i></h1></div>
