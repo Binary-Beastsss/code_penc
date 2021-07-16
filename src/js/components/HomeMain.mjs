@@ -19,26 +19,22 @@ const Label = new Element({
 
 const Container = new Element({
     attributes: { class: 'container' },
-            innerHTML: `<div><h1>CODE <i class="fas fa-pencil-alt"></i></h1></div>
+    innerHTML: `<div><h1 style="padding: 20px 0">CODE <i class="fas fa-pencil-alt"></i></h1></div>
              <div class="h"><h3>Your work</h3></div>`,
-            
 })
-
-
 
 const Sidebar = `
 <div class="sidebar">
     <div class="pen"><i class="fas fa-pencil-ruler"></i></div>
     <a href="https://github.com/orgs/Binary-Beastsss/dashboard" target="_blank">Lorem</a><br/>
     <hr/>
-    <a href="/app" data-link >Editor</a>
+    <a href="/app" data-link>Editor</a>
     <hr/>
 </div>
 
 `
 
-
-const footer = `
+const Footer = `
 <div class="footer">
     <div class="u">
         <ul>
@@ -51,9 +47,7 @@ const footer = `
 `
 Main.addInnerHTML('beforeend', [Sidebar])
 
-
-Main.appendMany([Checkbox, Label]);
-
+Main.appendMany([Checkbox, Label])
 
 for (let i = 0; i < 7; i++) {
     Container.append(
@@ -63,10 +57,8 @@ for (let i = 0; i < 7; i++) {
     )
 }
 
-Container.addInnerHTML('beforeend',footer)
-
+Container.addInnerHTML('beforeend', Footer)
 
 Main.append(Container)
-
 
 export default Main

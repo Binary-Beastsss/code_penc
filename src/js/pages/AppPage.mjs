@@ -1,4 +1,4 @@
-import Main from '../components/app.mjs'
+import AppContent from '../components/AppContent.mjs'
 import View from '../View.mjs'
 
 export default class Home extends View {
@@ -9,6 +9,6 @@ export default class Home extends View {
     }
 
     setup() {
-        this.append(Main)
+        this.append(AppContent)
     }
 }

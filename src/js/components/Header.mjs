@@ -1,4 +1,4 @@
-import Element from '../../Element.mjs'
+import Element from '../Element.mjs'
 
 const Header = new Element({
     tag: 'header',

@@ -1,11 +1,12 @@
 import Element from '../Element.mjs'
 
-const ContainerDiv = new Element({
-    tag : 'div'
+const AppContent = new Element({
+    tag: 'div',
 })
 
-
-ContainerDiv.addInnerHTML('beforeend', `
+AppContent.addInnerHTML(
+    'beforeend',
+    `
 <div class="nav">
 
 <div class="ul-con">
@@ -39,6 +40,7 @@ ContainerDiv.addInnerHTML('beforeend', `
 </div>
 
 </div>
-`)
+`
+)
 
-export default ContainerDiv
+export default AppContent
