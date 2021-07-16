@@ -4,10 +4,9 @@ self.addEventListener('install', (e) => {
             return cache.addAll([
                 './',
                 './manifest.json',
-                './images/logo192.png',
-                './images/logo512.png',
+                './images/test.webp',
                 './src/css/style.css',
-                './src/index.mjs',
+                './src/js/index.mjs',
             ])
         })
     )
