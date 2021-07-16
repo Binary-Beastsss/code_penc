@@ -1,4 +1,5 @@
-import Element from '../Element.mjs'
+import Element from '../../Element.mjs'
+import ImageContainer from '../HomeComponents/ImageContainer.mjs'
 
 const Main = new Element({ tag: 'main' })
 
@@ -22,7 +23,8 @@ const Label = new Element({
 })
 
 MainWrap.appendMany([Checkbox, Label])
-MainWrap.addInnerHTML(`
+
+const Sidebar = `
 <div class="sidebar">
     <a href="/about" data-link>Lorem</a><br />
     <hr />
@@ -32,28 +34,25 @@ MainWrap.addInnerHTML(`
     <hr />
     <a href="/dfgh" data-link>Editor</a>
 </div>
-<div class="container">
-    <div class="h"><h3>Your work</h3></div>
-    <div class="f">
-        <img src="/images/test.webp" alt="" />
-    </div>
-    <div class="f">
-        <img src="/images/test.webp" alt="" />
-    </div>
-    <div class="f">
-        <img src="/images/test.webp" alt="" />
-    </div>
-    <div class="f">
-        <img src="/images/test.webp" alt="" />
-    </div>
-    <div class="f">
-        <img src="/images/test.webp" alt="" />
-    </div>
-    <div class="f">
-        <img src="/images/test.webp" alt="" />
-    </div>
-</div>
-`)
+`
+
+MainWrap.addInnerHTML('beforeend', Sidebar)
+
+const Container = new Element({
+    attributes: { class: 'container' },
+    innerHTML: '<div class="h"><h3>Your work</h3></div>',
+})
+
+// This is going to be dynamic
+for (let i = 0; i < 6; i++) {
+    Container.append(
+        new ImageContainer('./images/test.webp', {
+            attributes: { class: 'f' },
+        })
+    )
+}
+
+MainWrap.append(Container)
 
 Main.append(MainWrap)
 

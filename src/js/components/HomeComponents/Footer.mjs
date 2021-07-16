@@ -1,4 +1,4 @@
-import Element from '../Element.mjs'
+import Element from '../../Element.mjs'
 
 const Footer = new Element({
     tag: 'footer',

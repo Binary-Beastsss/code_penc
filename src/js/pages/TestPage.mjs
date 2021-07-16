@@ -1,6 +1,6 @@
 import View from '../View.mjs'
-import Header from '../components/Header.mjs'
-import Footer from '../components/Footer.mjs'
+import Header from '../components/HomeComponents/Header.mjs'
+import Footer from '../components/HomeComponents/Footer.mjs'
 
 export default class TestPage extends View {
     constructor(args) {

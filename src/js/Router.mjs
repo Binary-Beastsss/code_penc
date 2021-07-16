@@ -1,3 +1,4 @@
+import AppPage from './pages/AppPage.mjs'
 import HomePage from './pages/HomePage.mjs'
 import TestPage from './pages/TestPage.mjs'
 
@@ -24,6 +25,7 @@ class Router {
     routes = [
         { path: '/', component: HomePage },
         { path: '/test', component: TestPage },
+        { path: '/app', component: AppPage },
     ]
 
     constructor(app) {
