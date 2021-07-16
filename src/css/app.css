@@ -70,7 +70,7 @@ body {
 
 
 
-.for-js{
+.dragger{
     background-color: var(--color2);
     height: 90vh;
     width: 3px;
