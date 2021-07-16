@@ -22,7 +22,7 @@ const Label = new Element({
 })
 
 MainWrap.appendMany([Checkbox, Label])
-MainWrap.addInnerHTML(`
+MainWrap.addInnerHTML('beforeend',`
 <div class="sidebar">
     <a href="/about" data-link>Lorem</a><br />
     <hr />
