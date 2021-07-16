@@ -1,7 +1,7 @@
 import View from '../View.mjs'
-import Header from '../components/HomeComponents/Header.mjs'
-import Main from '../components/HomeComponents/Main.mjs'
-import Footer from '../components/HomeComponents/Footer.mjs'
+import Header from '../components/Header.mjs'
+import Main from '../components/HomeMain.mjs'
+import Footer from '../components/Footer.mjs'
 
 export default class HomePage extends View {
     constructor(args) {

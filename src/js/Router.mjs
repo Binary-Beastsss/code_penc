@@ -1,6 +1,6 @@
-import AppPage from './pages/AppPage.mjs'
-import HomePage from './pages/HomePage.mjs'
+import HomePage from './pages/Home.mjs'
 import TestPage from './pages/TestPage.mjs'
+import AppPage from './pages/AppPage.mjs'
 
 const pathToRegex = (path) =>
     new RegExp('^' + path.replace(/\//g, '\\/').replace(/:\w+/g, '(.+)') + '$')

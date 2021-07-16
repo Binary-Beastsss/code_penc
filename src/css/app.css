@@ -1,6 +1,4 @@
 
-/*
-side div for txt */
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -13,23 +11,6 @@ body {
     display: flex;
 }
 
-.nav{
-    height: 50px;
-    font-family: 'Zen Tokyo Zoo', cursive;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--color2);
-    padding: 0 20px;
-
-
-}
-
-
-li{
-    display: inline;
-    margin-left: 10px;
-
-}
 
 
 
@@ -87,10 +68,7 @@ li{
     align-items: center;
 }
 
-.nav {
-    border-bottom: 4px solid var(--color3);
 
-}
 
 .for-js{
     background-color: var(--color2);

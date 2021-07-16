@@ -23,8 +23,9 @@ const Label = new Element({
 })
 
 MainWrap.appendMany([Checkbox, Label])
-
-const Sidebar = `
+MainWrap.addInnerHTML(
+    'beforeend',
+    `
 <div class="sidebar">
     <a href="/about" data-link>Lorem</a><br />
     <hr />
@@ -35,6 +36,7 @@ const Sidebar = `
     <a href="/dfgh" data-link>Editor</a>
 </div>
 `
+)
 
 MainWrap.addInnerHTML('beforeend', Sidebar)
 
