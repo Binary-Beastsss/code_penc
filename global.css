@@ -52,3 +52,25 @@ a:hover{
 
 }
 
+.nav{
+    display: flex;
+    height: 50px;
+    font-family: 'Zen Tokyo Zoo', cursive;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color2);
+    padding: 0 20px;
+
+}
+
+.nav {
+    border-bottom: 4px solid var(--color3);
+
+}
+
+
+li{
+    display: inline;
+    margin-left: 10px;
+
+}
