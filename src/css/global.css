@@ -34,7 +34,6 @@ a {
     color: var(--darkGray);
     font-family: 'Zen Tokyo Zoo', cursive;
     transition: 0.8s;
-
 }
 
 a:hover{

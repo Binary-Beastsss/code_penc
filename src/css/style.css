@@ -9,13 +9,11 @@ h1, h3{
     justify-content: center;
 }
 
-main {
-    overflow-y: scroll;
-
-}
 
 
 .container{
+    height: 90vh;
+    overflow-y: scroll;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -28,8 +26,6 @@ main {
     -moz-transition: left 0.5s ease; 
     transition: left 0.5s ease;
     background-color: var(--color1);
-
-
 
 
 }
@@ -61,9 +57,6 @@ main {
     
 }
 
-.b {
-    margin-bottom: 100px;
-}
 
 
 .f:hover{
@@ -148,11 +141,12 @@ label {
 .footer{
     justify-content: space-between;
     align-items: center;
-    height: 13vh;
+    height: 11vh;
     background-color: var(--color1);
     border-top: 3px solid 	var(--color3);
-    position: absolute;
+    position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -160,8 +154,7 @@ label {
 }
 
 .u{
-    width: 40%;
-    text-align: center;
+    width: 60%;
 }
 
 li{
@@ -169,14 +162,11 @@ li{
     margin-left: 10px;
 }
 
-.c{
-    margin-right: 10vw;
-}
+
 
 
 @media all and (max-width: 768px) {
     .container{
-
         display: flex;
         flex-direction: column;
         justify-content: space-between;
