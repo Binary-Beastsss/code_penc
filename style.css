@@ -105,6 +105,7 @@ span{
     color: white;
 }
 
+
 hr{
     height: 3px;
     border-radius: 3px;
@@ -140,28 +141,6 @@ label {
     transition: left 0.5s ease;
 }
 
-a {
-    text-decoration: none;
-    color: darkgray;
-    font-family: 'Zen Tokyo Zoo', cursive;
-    transition: 0.8s;
-
-}
-
-a:hover{
-    transition: 0.8s;
-    color: var(--color2);
-    text-shadow:
-      0 0 7px var(--color2),
-      0 0 10px var(--color2),
-      0 0 21px var(--color2),
-      0 0 42px var(--lime),
-      0 0 82px var(--lime),
-      0 0 92px var(--lime),
-      0 0 102px var(--lime),
-      0 0 151px var(--lime);
-
-}
 
 
 
