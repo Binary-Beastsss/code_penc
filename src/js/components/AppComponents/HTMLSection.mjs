@@ -8,9 +8,9 @@ const HtmlTop = new Element({
 })
 
 const HTML = new Element({
+    tag: 'textarea',
     attributes: {
         class: 'html',
-        contenteditable: 'true',
     },
 })
 

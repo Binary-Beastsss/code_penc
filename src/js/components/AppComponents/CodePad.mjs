@@ -14,18 +14,19 @@ class CodePad {
         }, 500)
     }
 
-    _setupOutput() {
+    _setupOutputElements() {
         // setting up output body, which is app
-        this.$outputEntry = document.createElement('div')
-        this.$output.contentDocument.body.append(this.$outputEntry)
+        this.$outputEntry = this.$output.contentDocument.body.querySelector('div')
 
         // setting up style input
-        this.$styleTag = document.createElement('style')
-        this.$output.contentDocument.head.append(this.$styleTag)
+        this.$styleTag = this.$output.contentDocument.head.querySelector('style')
 
         // setting up script input
-        this.$scriptTag = document.createElement('script')
-        this.$output.contentDocument.body.append(this.$scriptTag)
+        this.$scriptTag = this.$output.contentDocument.body.querySelector('script')
+    }
+
+    _setupOutput() {
+        this._setupOutputElements()
 
         this.$html.addEventListener('input', this.handleChange.bind(this))
         this.$css.addEventListener('input', this.handleChange.bind(this))
@@ -40,39 +41,26 @@ class CodePad {
         this.toggle = true
         setTimeout(() => {
             this.toggle = false
-        }, 1000)
+        }, 500)
     }
 
     handleChange() {
-        this.$outputEntry.innerHTML = this.$html.innerText
-        this.$styleTag.innerHTML = this.$css.innerText
-    }
-
-    deleteAllChildren() {
-        this.$output.contentDocument.head.innerHTML = ''
-        this.$output.contentDocument.body.innerHTML = ''
+        this.$outputEntry.innerHTML = this.$html.value
+        this.$styleTag.innerHTML = this.$css.value
     }
 
     async handleJSChange() {
         if (this.toggle) return
         this.cover()
 
-        this.deleteAllChildren()
         this.$output.contentWindow.location.reload()
 
         await delay(500)
+        this._setupOutputElements()
 
-        this.$outputEntry = document.createElement('div')
-        this.$outputEntry.innerHTML = this.$html.innerText
-        this.$output.contentDocument.body.append(this.$outputEntry)
-
-        this.$styleTag = document.createElement('style')
-        this.$styleTag.innerHTML = this.$css.innerText
-        this.$output.contentDocument.head.append(this.$styleTag)
-
-        this.$scriptTag = document.createElement('script')
-        this.$scriptTag.innerHTML = this.$js.innerText
-        this.$output.contentDocument.body.append(this.$scriptTag)
+        this.$outputEntry.innerHTML = this.$html.value
+        this.$styleTag.innerHTML = this.$css.value
+        this.$scriptTag.innerHTML = this.$js.value
     }
 
     async filterText(e) {

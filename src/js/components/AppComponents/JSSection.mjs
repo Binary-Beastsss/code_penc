@@ -8,9 +8,9 @@ const JsTop = new Element({
 })
 
 const JS = new Element({
+    tag: 'textarea',
     attributes: {
         class: 'js',
-        contenteditable: 'true',
     },
 })
 
