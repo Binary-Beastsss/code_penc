@@ -38,7 +38,7 @@ const Footer = `
 <div class="footer">
     <div class="u">
         <ul>
-            <li><a href="https://github.com/orgs/Binary-Beastsss/dashboard" target="_blank"">About</a></li>
+            <li><a href="/about" data-link>About</a></li>
             <li><a href="https://github.com/orgs/Binary-Beastsss/dashboard" target="_blank"">Support</a></li>
         </ul>
     </div>

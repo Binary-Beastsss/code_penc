@@ -1,6 +1,10 @@
 import HomePage from './pages/Home.mjs'
 import TestPage from './pages/TestPage.mjs'
 import AppPage from './pages/AppPage.mjs'
+import AboutPage from './pages/AboutPage.mjs'
+
+
+
 
 const pathToRegex = (path) =>
     new RegExp('^' + path.replace(/\//g, '\\/').replace(/:\w+/g, '(.+)') + '$')
@@ -26,6 +30,8 @@ class Router {
         { path: '/', component: HomePage },
         { path: '/test', component: TestPage },
         { path: '/app', component: AppPage },
+        { path: '/about', component: AboutPage }
+
     ]
 
     constructor(app) {
