@@ -5,10 +5,11 @@ export default class Home extends View {
     constructor(args) {
         super(args)
         this.importStyle('./src/css/app.css')
-        this.setup()
     }
 
-    setup() {
+    async view(app) {
         this.append(AppContent)
+        app.clear()
+        app.append(this)
     }
 }

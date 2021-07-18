@@ -14,7 +14,7 @@ const Iframe = new Element({
             <style></style>
         </head>
         <body>
-            <div></div>
+            <output></output>
             <script></script>
         </body>
         </html>

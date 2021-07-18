@@ -4,9 +4,24 @@ body {
 }
 
 .output {
-    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    background-color: white;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.overlay.behind {
+    z-index: -1;
 }
 
 .container,
@@ -30,13 +45,30 @@ body {
 }
 
 .right {
+    --width: max(30vw, 300px);
     position: relative;
-    width: 30vw;
-    max-width: 500px;
+    width: var(--width);
+    min-width: 200px;
     height: 100%;
-    flex: 1;
     display: flex;
     flex-direction: column;
+}
+
+.right h4 {
+    position: relative;
+    width: 100%;
+}
+
+.right button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    cursor: pointer;
 }
 
 .html,
@@ -45,10 +77,12 @@ body {
     padding: 20px;
     border: 4px solid var(--color3);
     border-top: none;
-    flex: 1;
     color: var(--yellow);
     overflow-y: scroll;
     outline: none;
+    resize: none;
+    transition: 0.4s;
+    flex: 1;
 }
 
 .html::-webkit-scrollbar,
@@ -71,6 +105,7 @@ body {
 
 .left {
     flex: 1;
+    position: relative;
 }
 
 .h-top,
@@ -83,13 +118,11 @@ body {
     border: 2px solid var(--color3);
     display: flex;
     align-items: center;
+    user-select: none;
 }
 
 .dragger {
     background-color: var(--color3);
-    height: 100%;
     width: 5px;
-    position: absolute;
-    top: 0;
     cursor: col-resize;
 }

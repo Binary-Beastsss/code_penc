@@ -3,9 +3,32 @@ import Element from '../../Element.mjs'
 const CssTop = new Element({
     attributes: {
         class: 'c-top',
+        title: 'double click to collapse',
     },
-    innerHTML: `<h4><i class="fas fa-pencil-ruler"></i> CSS</h4>`,
 })
+
+const H4 = new Element({
+    tag: 'h4',
+    innerHTML: '<i class="fas fa-pencil-ruler"></i> CSS ',
+})
+
+const CollapseButton = new Element({
+    tag: 'button',
+    innerHTML: '<i class="fas fa-chevron-down"></i>',
+})
+
+let collapsed = false
+
+CollapseButton.addEventListener('click', (e) => {
+    collapsed = !collapsed
+
+    CSS.$el.style.flex = collapsed ? 0 : 1
+    CSS.$el.style.padding = (collapsed ? 0 : 20) + 'px'
+    e.target.style.transform = collapsed ? 'rotate(180deg)' : 'rotate(0deg)'
+})
+
+H4.append(CollapseButton)
+CssTop.append(H4)
 
 const CSS = new Element({
     tag: 'textarea',

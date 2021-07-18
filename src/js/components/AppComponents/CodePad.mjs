@@ -16,7 +16,7 @@ class CodePad {
 
     _setupOutputElements() {
         // setting up output body, which is app
-        this.$outputEntry = this.$output.contentDocument.body.querySelector('div')
+        this.$outputEntry = this.$output.contentDocument.body.querySelector('output')
 
         // setting up style input
         this.$styleTag = this.$output.contentDocument.head.querySelector('style')
@@ -27,6 +27,10 @@ class CodePad {
 
     _setupOutput() {
         this._setupOutputElements()
+
+        this.$outputEntry.innerHTML = this.$html.value
+        this.$styleTag.innerHTML = this.$css.value
+        this.$scriptTag.innerHTML = this.$js.value
 
         this.$html.addEventListener('input', this.handleChange.bind(this))
         this.$css.addEventListener('input', this.handleChange.bind(this))
@@ -45,6 +49,11 @@ class CodePad {
     }
 
     handleChange() {
+        if (this.$js.value !== '') {
+            this.handleJSChange()
+            return
+        }
+
         this.$outputEntry.innerHTML = this.$html.value
         this.$styleTag.innerHTML = this.$css.value
     }
@@ -72,6 +81,10 @@ class CodePad {
             const end = e.target.value.slice(selectionStart)
 
             e.target.value = start + '    ' + end
+
+            window.getSelection().empty()
+            window.getSelection().removeAllRanges()
+
             e.target.selectionStart = e.target.selectionEnd = selectionStart + 4
         }
     }

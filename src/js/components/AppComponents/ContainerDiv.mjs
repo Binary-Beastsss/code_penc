@@ -2,6 +2,7 @@ import Element from '../../Element.mjs'
 import LeftDiv from './LeftDiv.mjs'
 import RightDiv from './RightDiv.mjs'
 import { CodePad } from './CodePad.mjs'
+import Dragger from './Dragger.mjs'
 
 const filter = (children, targetClasses) => {
     const filteredItems = []
@@ -52,6 +53,6 @@ const ContainerDiv = new Element({
     },
 })
 
-ContainerDiv.appendMany([LeftDiv, RightDiv])
+ContainerDiv.appendMany([LeftDiv, Dragger, RightDiv])
 
 export default ContainerDiv
