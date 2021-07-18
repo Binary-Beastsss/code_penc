@@ -1,61 +1,95 @@
 import Element from '../../Element.mjs'
-import ImageContainer from '../HomeComponents/ImageContainer.mjs'
+import ProjectLink from './ProjectLink.mjs'
 
-const Main = new Element({ tag: 'main' })
+class Main extends Element {
+    constructor(args) {
+        super(args)
+        this.tag = 'main'
 
-const MainWrap = new Element({
-    attributes: { class: 'main-wrap' },
-})
-
-const Checkbox = new Element({
-    tag: 'input',
-    attributes: {
-        id: 'slide-sidebar',
-        type: 'checkbox',
-        role: 'button',
-    },
-})
-
-const Label = new Element({
-    tag: 'label',
-    attributes: { for: 'slide-sidebar' },
-    innerHTML: ' <span>close</span>',
-})
-
-MainWrap.appendMany([Checkbox, Label])
-MainWrap.addInnerHTML(
-    'beforeend',
-    `
-<div class="sidebar">
-    <a href="/about" data-link>Lorem</a><br />
-    <hr />
-    <a href="/test" data-link>Lorem</a><br />
-    <hr />
-    <a href="/app" data-link>Lorem</a><br />
-    <hr />
-    <a href="/dfgh" data-link>Editor</a>
-</div>
-`
-)
-
-MainWrap.addInnerHTML('beforeend', Sidebar)
-
-const Container = new Element({
-    attributes: { class: 'container' },
-    innerHTML: '<div class="h"><h3>Your work</h3></div>',
-})
-
-// This is going to be dynamic
-for (let i = 0; i < 6; i++) {
-    Container.append(
-        new ImageContainer('./images/test.webp', {
-            attributes: { class: 'f' },
+        this.checkbox = new Element({
+            tag: 'input',
+            attributes: {
+                id: 'slide-sidebar',
+                type: 'checkbox',
+                role: 'button',
+            },
         })
-    )
+
+        this.label = new Element({
+            tag: 'label',
+            attributes: { for: 'slide-sidebar' },
+            innerHTML: ' <span><i class="fas fa-indent"></i></span>',
+        })
+
+        this.container = new Element({
+            attributes: { class: 'container' },
+            innerHTML: `<div><h1 style="padding: 20px 0">CODE <i class="fas fa-pencil-alt"></i></h1></div>
+                     <div class="h"><h3>Your work</h3></div>`,
+        })
+
+        this.sidebar = `
+        <div class="sidebar">
+            <div class="pen"><i class="fas fa-pencil-ruler"></i></div>
+            <a href="https://github.com/orgs/Binary-Beastsss/dashboard" target="_blank">Github</a><br/>
+            <hr/>
+            <a href="/app" data-link>Editor</a>
+            <hr/>
+        </div>
+        `
+
+        this.footer = `
+        <div class="footer">
+            <div class="u">
+                <ul>
+                    <li><a href="/about" data-link>About</a></li>
+                    <li><a href="https://github.com/orgs/Binary-Beastsss/dashboard" target="_blank"">Support</a></li>
+                </ul>
+            </div>
+            <div class="c"><h1>CODE <i class="fas fa-pencil-alt"></i></h1></div>
+        </div>
+        `
+
+        this._setup()
+    }
+
+    _setup() {
+        this.addInnerHTML('beforeend', this.sidebar)
+
+        this.appendMany([this.checkbox, this.label])
+
+        const projects = JSON.parse(localStorage.getItem('projects'))
+
+        if (!projects || !Object.keys(projects).length) {
+            this.container.append(
+                new Element({
+                    attributes: { class: 'empty-hero' },
+                    innerHTML: `
+                <h1>Go to the editor to start a project</h1>
+                <a href="/app" data-link>Editor</a>
+                `,
+                })
+            )
+        }
+
+        for (const id in projects) {
+            this.container.append(
+                new ProjectLink({
+                    id,
+                    tag: 'a',
+                    title: projects[id].title,
+                    dateLastSaved: projects[id].dateLastSaved,
+                    attributes: {
+                        class: 'project-link',
+                        href: `/app/${id}`,
+                        'data-link': '',
+                    },
+                })
+            )
+        }
+
+        this.container.addInnerHTML('beforeend', this.footer)
+        this.append(this.container)
+    }
 }
-
-MainWrap.append(Container)
-
-Main.append(MainWrap)
 
 export default Main

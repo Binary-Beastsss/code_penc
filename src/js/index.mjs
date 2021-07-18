@@ -21,6 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
     router.useRouter()
 })
 
+if (!('projects' in localStorage)) {
+    localStorage.setItem('projects', JSON.stringify({}))
+}
+
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker
         .register('sw.js')

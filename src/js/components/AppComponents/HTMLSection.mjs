@@ -1,4 +1,5 @@
 import Element from '../../Element.mjs'
+import { pathToRegex } from '../../utils/Regex.mjs'
 
 const HtmlTop = new Element({
     attributes: {
@@ -13,7 +14,7 @@ const H4 = new Element({
 
 const CollapseButton = new Element({
     tag: 'button',
-    innerHTML: '<i class="fas fa-chevron-down"></i>',
+    innerHTML: '<i class="fas fa-chevron-down" title="Collapse HTML"></i>',
 })
 
 let collapsed = false
@@ -34,6 +35,32 @@ const HTML = new Element({
     attributes: {
         class: 'html',
     },
+})
+
+window.addEventListener('popstate', () => {
+    if (location.pathname.includes('/app')) {
+        let id = location.pathname.split('/')
+        id = id[id.length - 1]
+
+        const projects = JSON.parse(localStorage.getItem('projects'))
+
+        HTML.$el.innerText = projects[id].html
+    }
+})
+
+document.addEventListener('click', (e) => {
+    if ('link' in e.target.dataset) {
+        if (e.target.href.includes('/app')) {
+            setTimeout(() => {
+                let id = location.pathname.split('/')
+                id = id[id.length - 1]
+
+                const projects = JSON.parse(localStorage.getItem('projects'))
+
+                HTML.$el.innerText = projects[id].html
+            }, 200)
+        }
+    }
 })
 
 export { HtmlTop, HTML }

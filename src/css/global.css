@@ -24,7 +24,8 @@
 body {
     background-color: var(--color1);
     min-height: 100vh;
-    font-family: 'Zen Tokyo Zoo', cursive;
+    font-family: 'Zen Tokyo Zoo', 'PT Sans', 'Segoe UI', Tahoma, Geneva, Verdana,
+        sans-serif;
 }
 
 a {
@@ -44,6 +45,7 @@ a:hover {
 }
 
 .nav {
+    position: relative;
     display: flex;
     height: 50px;
     font-family: 'Zen Tokyo Zoo', cursive;

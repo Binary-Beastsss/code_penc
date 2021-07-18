@@ -13,7 +13,7 @@ const H4 = new Element({
 
 const CollapseButton = new Element({
     tag: 'button',
-    innerHTML: '<i class="fas fa-chevron-down"></i>',
+    innerHTML: '<i class="fas fa-chevron-down" title="Collapse JS"></i>',
 })
 
 let collapsed = false
@@ -35,6 +35,32 @@ const JS = new Element({
     attributes: {
         class: 'js',
     },
+})
+
+window.addEventListener('popstate', () => {
+    if (location.pathname.includes('/app')) {
+        let id = location.pathname.split('/')
+        id = id[id.length - 1]
+
+        const projects = JSON.parse(localStorage.getItem('projects'))
+
+        JS.$el.innerText = projects[id].js
+    }
+})
+
+document.addEventListener('click', (e) => {
+    if ('link' in e.target.dataset) {
+        if (e.target.href.includes('/app')) {
+            setTimeout(() => {
+                let id = location.pathname.split('/')
+                id = id[id.length - 1]
+
+                const projects = JSON.parse(localStorage.getItem('projects'))
+
+                JS.$el.innerText = projects[id].js
+            }, 200)
+        }
+    }
 })
 
 export { JsTop, JS }

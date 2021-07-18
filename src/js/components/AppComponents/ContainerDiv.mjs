@@ -22,7 +22,7 @@ const [htmlPad, cssPad, jsPad] = filter(RightDiv.children, targets)
 const [outputElement] = filter(LeftDiv.children, targets)
 
 window.addEventListener('popstate', () => {
-    if (location.pathname === '/app') {
+    if (location.pathname.includes('/app')) {
         new CodePad({
             outputElement,
             htmlPad,
@@ -48,9 +48,7 @@ document.addEventListener('click', (e) => {
 })
 
 const ContainerDiv = new Element({
-    attributes: {
-        class: 'container',
-    },
+    attributes: { class: 'container' },
 })
 
 ContainerDiv.appendMany([LeftDiv, Dragger, RightDiv])

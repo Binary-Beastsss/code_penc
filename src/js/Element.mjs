@@ -115,9 +115,9 @@ export default class Element {
      * @description Adds array of elements to end of this
      * @param {Array} elements
      */
-    appendMany(elements) {
+    appendMany(elements, props = {}) {
         for (const element of elements) {
-            this.append(element)
+            this.append(element, props)
         }
     }
 
@@ -125,9 +125,9 @@ export default class Element {
      * @description Adds array of elements to beginning of this
      * @param {Array} elements
      */
-    prependMany(elements) {
+    prependMany(elements, props = {}) {
         for (const element of elements) {
-            this.prepend(element)
+            this.prepend(element, props)
         }
     }
 
