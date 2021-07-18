@@ -10,6 +10,8 @@ const Nav = `
 <div class="ul-con">
     <ul>
         <li><a href="/" data-link>Home</a></li>
+        <li><a href="/app" data-link>Editor</a></li>
+
     </ul>
 </div>
 
@@ -24,7 +26,7 @@ const Nav = `
     <p>Ido Sarue Full stack developer<br><a class="a" href="https://github.com/idosarue">Github</a></p>
 </div>
 <div class="second">
-    <p>Ido Sarue Full stack developer<br><a class="a" href="https://github.com/idosarue">Github</a></p>
+    <p>Ido Sarue Full stack developer<br><a class="a" href="https://github.com/Isaac-Svi">Github</a></p>
     <img id="m" src="images/me.jpg" alt="me">
 
 </div>
